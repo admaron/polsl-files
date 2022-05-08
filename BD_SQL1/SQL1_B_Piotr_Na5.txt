@@ -1,0 +1,96 @@
+RAPORT SQL 1 PIOTR BODNAR
+ZESTAW B
+Współtworzono z Karoliną Wilgocką
+
+2. Podać nazwy przedmiotów zaczynające się od litery A.
+
+SELECT NAZWA_PRZEDM
+FROM PRZEDMIOTY p 
+WHERE p.NAZWA_PRZEDM LIKE 'A%';
+
+3. Podać nazwiska studentów studiujących na kierunku BUDOWA MC.
+
+SELECT s.NAZWISKO
+FROM STUDENCI s, KIERUNKI k
+WHERE s.NR_KIER = k.NR_KIER AND k.NAZWA_KIER = 'BUDOWA MC' ORDER BY s.NAZWISKO ASC;
+
+6. Podać (w odwrotnej kolejności alfabetycznej) nazwiska studentów mężczyzn, którzy studiują
+na kierunku ELEKTRONIKA MED lub INFORMATYKA.
+
+SELECT s.NAZWISKO
+FROM STUDENCI s, KIERUNKI k
+WHERE s.NR_KIER = k.NR_KIER AND s.PLEC = 'M' AND (k.NAZWA_KIER = 'INFORMATYKA' OR k.NAZWA_KIER = 'ELEKTRONIKA MED')
+ORDER BY s.NAZWISKO DESC;
+
+8. Podać nazwy przedmiotów i nazwy ich przedmiotów nadrzędnych. We frazie SELECT proszę
+wskazać (fraza AS), która nazwa jest nazwą tematu nadrzędnego, a która – tematu podrzędnego.
+
+SELECT PP.NAZWA_PRZEDM AS PRZEDMIOT_PODRZEDNY, PN.NAZWA_PRZEDM AS PRZEDMIOT_NADRZEDNY
+FROM PRZEDMIOTY AS PN RIGHT JOIN PRZEDMIOTY AS PP
+ON PN.NR_PRZEDM = PP.NR_PRZEDM_NADRZ;
+
+9. Podać liczbę studentów kierunku INFORMATYKA.
+
+SELECT COUNT(s.NR_STUD) AS Ilosc
+FROM STUDENCI s, KIERUNKI k
+WHERE s.NR_KIER = k.NR_KIER AND k.NAZWA_KIER = 'INFORMATYKA';
+
+12. Podać najniższą i najwyższą ocenę uzyskaną przez poszczególnych studentów.
+
+SELECT MAX(o.OCENA) AS Najwyzsza, MIN(o.OCENA) AS Najnizsza, s.NR_STUD
+FROM OCENY o, STUDENCI s
+WHERE o.NR_STUD = s.NR_STUD
+GROUP BY s.NR_STUD;
+
+14. Podać daty urodzenia najstarszych studentów na poszczególnych kierunkach.
+
+SELECT MIN(s.DATA_UR) AS najstarszy_student, k.NAZWA_KIER
+FROM STUDENCI s, KIERUNKI k
+WHERE s.NR_KIER=k.NR_KIER
+GROUP BY k.NAZWA_KIER, k.NR_KIER;
+
+16. Podać nazwy przedmiotów, z których wystawiono więcej niż 8 ocen.
+
+SELECT p.NAZWA_PRZEDM
+FROM PRZEDMIOTY p, OCENY o
+WHERE p.NR_PRZEDM = o.NR_PRZEDM
+GROUP BY p.NR_PRZEDM, p.NAZWA_PRZEDM
+HAVING COUNT(o.OCENA) > 8;
+
+17. Dla każdego przedmiotu podać liczbę studentów, którzy otrzymali z nich ocenę.
+(Uwaga! Niektórzy studenci mają kilka ocen z danego przedmiotu).
+
+SELECT DISTINCT COUNT(s.NAZWISKO) AS SUMA, NAZWA_PRZEDM
+FROM PRZEDMIOTY AS p, OCENY AS o, STUDENCI AS s
+WHERE o.NR_PRZEDM = p.NR_PRZEDM AND s.NR_STUD = o.NR_STUD
+GROUP BY NAZWA_PRZEDM;
+
+18. Podać nazwiska studentów, którzy są starsi od studenta WILK.
+
+SELECT s.nazwisko 
+FROM studenci s
+WHERE (SELECT s.DATA_UR
+        FROM studenci s 
+	WHERE s.NAZWISKO='WILK')<s.data_ur ;
+
+19. Podać nazwiska studentów, których średnia ocen jest większa od średniej ocen studenta
+WALCZAKA.
+
+SELECT NAZWISKO, AVG(OCENA) AS SREDNIA
+FROM STUDENCI s, OCENY o
+WHERE s.NR_STUD = o.NR_STUD
+GROUP BY NAZWISKO
+HAVING (SELECT AVG(OCENA) FROM STUDENCI AS s1,OCENY AS o1 WHERE 
+s1.NR_STUD = o1.NR_STUD AND s1.NAZWISKO = 'WALCZAK') < AVG(OCENA);
+
+20. Podać nazwy kierunków, na których studiuje więcej studentów niż na kierunku
+ELEKTRONIKA MED. 
+
+SELECT NAZWA_KIER, COUNT(s.NAZWISKO)
+FROM KIERUNKI k, STUDENCI s
+WHERE k.NR_KIER = s.NR_KIER
+GROUP BY NAZWA_KIER
+HAVING (SELECT COUNT(NAZWISKO) FROM KIERUNKI AS k1, STUDENCI AS 
+s1 WHERE k1.NR_KIER = s1.NR_KIER AND k1.NAZWA_KIER = 'ELEKTRONIKA MED') < COUNT(s.NAZWISKO);
+
+
