@@ -1,0 +1,308 @@
+Piotr Bodnar, Raport PSQL
+Współtworzone z Karoliną Wilgocką
+
+zad 1
+
+CREATE TABLE Osoby (imie VARCHAR(15), nazwisko VARCHAR(15), PESEL VARCHAR(11), data_ur TIMESTAMP);
+SELECT * FROM OSOBY;
+
+zad 2
+
+CREATE TABLE Pracownicy (nr_prac INTEGER, nr_zesp INTEGER, pensja REAL) INHERITS (Osoby);
+SELECT * FROM PRACOWNICY;
+
+zad 3
+
+INSERT INTO OSOBY (imie,nazwisko,PESEL,data_ur) VALUES ('Jan','Nowak','11111111111','1988-01-01');
+INSERT INTO OSOBY (imie,nazwisko,PESEL,data_ur) VALUES ('Adam','Kowalski','22222222222','1989-10-01');
+INSERT INTO OSOBY (imie,nazwisko,PESEL,data_ur) VALUES ('Anna','Krol','33333333333','1990-10-15');
+SELECT * FROM OSOBY;
+
+zad 4
+
+INSERT INTO Pracownicy (imie,nazwisko,PESEL,data_ur,nr_prac,nr_zesp,pensja) VALUES ('Tomasz','Wicek','44444444444','1978-12-12',1,10,2500);
+INSERT INTO Pracownicy (imie,nazwisko,PESEL,data_ur,nr_prac,nr_zesp,pensja) VALUES ('Maria','Bialek','55555555555','1980-12-12',2,10,2000);
+SELECT * FROM PRACOWNICY;
+
+zad 5
+
+SELECT* FROM pg_tables WHERE tablename = 'Osoby' OR tablename = 'Pracownicy';
+
+zad 6
+
+SELECT pa.attname, pt.typname
+FROM pg_class pc, pg_attribute pa, pg_type pt
+WHERE pc.relname='osoby' AND pc.oid =pa.attrelid AND pt.oid = pa.atttypid;
+
+zad 7
+
+SELECT tableoid FROM Pracownicy;
+
+zad 8
+
+SELECT tableoid FROM Osoby;
+
+zad 9
+
+SELECT tableoid,*FROM Osoby;
+
+zad 10
+
+SELECT tableoid,*FROM ONLY Osoby;
+
+zad 11
+
+DELETE FROM Pracownicy WHERE imie = 'Maria';
+
+zad 12
+
+SELECT* FROM Osoby;
+
+zad 13
+
+INSERT INTO Pracownicy (imie,nazwisko,PESEL,data_ur,nr_prac,nr_zesp,pensja) VALUES ('Witold','Wrembel','88888888888','02-02-1977',2,10,1950);
+INSERT INTO Pracownicy (imie,nazwisko,PESEL,data_ur,nr_prac,nr_zesp,pensja) VALUES ('Kamila','Bialek','99999999999','12-12-1983',3,20,2000);
+
+zad 14
+
+SELECT tableoid FROM Pracownicy;
+
+zad 15
+
+CREATE TABLE premie (nr_prac INTEGER, premia_kwartalna INTEGER[]);
+
+zad 16
+
+INSERT INTO premie VALUES (1,'{100,150,200,250}');
+
+zad 17
+
+SELECT * FROM premie;
+SELECT premia_kwartalna[1] FROM premie;
+
+zad 18
+
+CREATE TABLE wypozyczenia (nr_prac integer, autor_tytul text[][]);
+
+zad 19
+
+INSERT INTO wypozyczenia VALUES
+(1, '{{"Tolkien", "Hobbit", "Iskry", 1980}, {"Dickens", "Klub Pickwicka", "MG", 1989}, {"Stone",
+"Pasja zycia", "ZYSK I S-KA", 1999}}');
+
+INSERT INTO wypozyczenia VALUES (2, '{{"Pascal", "Przewodnik", "lonely planet", 2010},
+{"Archer", "Co do grosza", "REBIS Sp. z o.o.", 1999}}');
+
+zad 20
+
+SELECT * FROM wypożyczenia;
+SELECT nr_prac, autor_tytul[1][1] FROM wypozyczenia;
+SELECT nr_prac, autor_tytul[1:3][1] FROM wypozyczenia;
+SELECT nr_prac, autor_tytul[1:3][1:3] FROM wypozyczenia;
+SELECT nr_prac, autor_tytul[1:3][2] FROM wypozyczenia;
+SELECT nr_prac, autor_tytul[2][2] FROM wypozyczenia;
+SELECT nr_prac, autor_tytul[2][1] FROM wypozyczenia;
+
+zad 21
+
+CREATE FUNCTION dane (INTEGER) RETURNS text
+AS 'select nazwisko from Pracownicy where nr_prac = $1'
+LANGUAGE 'sql';
+
+zad 22
+
+SELECT dane(1) AS nazwisko;
+
+zad 23
+
+CREATE TYPE complex AS (i text, n text, p text);
+CREATE FUNCTION dane2 (INTEGER) RETURNS complex
+AS 'select imie, nazwisko, PESEL from Pracownicy where nr_prac = $1'
+LANGUAGE 'sql';
+SELECT dane2(2);
+
+zad 24
+
+CREATE FUNCTION dane3 () RETURNS setof complex
+AS 'select imie, nazwisko, PESEL from Pracownicy'
+LANGUAGE 'sql';
+SELECT dane3();
+
+zad 25
+
+CREATE OR REPLACE FUNCTION tytuly (INTEGER) RETURNS text[]
+AS 'select autor_tytul[1:3][2:2] from wypozyczenia where nr_prac = $1'
+LANGUAGE 'sql';
+SELECT tytuly(1);
+
+zad 26
+
+CREATE OR REPLACE FUNCTION concat (text, text) RETURNS text AS
+$$
+BEGIN
+RETURN $1||$2;
+END;
+$$
+LANGUAGE 'plpgsql';
+
+zad 27
+
+SELECT concat('po','danie');
+
+zad 28
+
+CREATE OR REPLACE FUNCTION extra_money (INTEGER) RETURNS REAL AS
+$$
+DECLARE zm REAL;
+BEGIN
+SELECT 1.25 * pensja INTO zm FROM pracownicy WHERE nr_prac = $1;
+RETURN zm;
+END;
+$$
+LANGUAGE 'plpgsql';
+SELECT extra_money(1);
+
+zad 29
+
+ALTER TABLE Osoby ADD COLUMN prefix_tel TEXT;
+ALTER TABLE Osoby ADD COLUMN tel TEXT;
+UPDATE Osoby SET prefix_tel = '0-16' WHERE imie = 'Witold';
+UPDATE Osoby SET tel = '7654321' WHERE imie = 'Witold';
+UPDATE Osoby SET prefix_tel = '0' WHERE imie = 'Kamila';
+UPDATE Osoby SET tel = '500010203' WHERE imie = 'Kamila';
+SELECT*FROM Osoby;
+
+zad 30
+
+CREATE OR REPLACE FUNCTION merge_fields(t_row pracownicy) RETURNS text AS
+$$
+BEGIN
+RETURN t_row.imie || ' ' || t_row.nazwisko || ' ' || t_row.prefix_tel || t_row.tel;
+END;
+$$
+LANGUAGE plpgsql;
+SELECT merge_fields(t.*) FROM pracownicy t;
+
+zad 31
+
+CREATE OR REPLACE FUNCTION merge_fields(t_row osoby) RETURNS text AS
+$$
+BEGIN
+RETURN t_row.prefix_tel || t_row.tel;
+END;
+$$
+LANGUAGE plpgsql;
+SELECT merge_fields(t.*) FROM osoby t;
+
+zad 32
+
+CREATE RULE regula1
+AS ON UPDATE TO Pracownicy
+WHERE NEW.pensja <> OLD.pensja
+DO INSTEAD NOTHING;
+
+zad 33
+
+SELECT * FROM pracownicy;
+UPDATE pracownicy SET nr_zesp = 30 WHERE nr_zesp = 20;
+SELECT * FROM pracownicy;
+UPDATE pracownicy SET pensja = 2000 WHERE imie = 'Witold';
+SELECT * FROM pracownicy;
+
+zad 34
+
+CREATE RULE regula2
+AS ON UPDATE TO Pracownicy
+WHERE NEW.nr_prac<=0
+DO INSTEAD NOTHING;
+
+zad 35
+
+CREATE VIEW osob_view AS SELECT imie, nazwisko, PESEL FROM osoby WHERE
+imie='Witold ';
+CREATE RULE reg2 AS ON INSERT TO osob_view DO INSTEAD INSERT INTO osoby
+(imie, nazwisko, PESEL) VALUES (NEW.imie,NEW.nazwisko, NEW.PESEL);
+
+zad 36
+
+ALTER TABLE Premie ADD COLUMN last_updated timestamptz;
+SELECT* FROM Premie;
+
+zad 37
+
+CREATE OR REPLACE FUNCTION upd() RETURNS TRIGGER AS
+$$
+BEGIN
+NEW.last_updated = now();
+RETURN NEW;
+END;
+$$
+LANGUAGE plpgsql;
+
+zad 38
+
+CREATE TRIGGER last_upd
+BEFORE INSERT OR UPDATE ON Premie
+FOR EACH ROW
+EXECUTE PROCEDURE upd();
+
+zad 39
+
+SELECT * FROM Premie;
+INSERT INTO Premie VALUES (2, '{300,150,100,150}');
+SELECT * FROM Premie;
+
+zad 40
+
+CREATE TABLE Towary (id integer, nazwa varchar(10),cena_netto integer);
+INSERT INTO Towary values(1,'{kabel}',50);
+INSERT INTO Towary values(2,'{laptop}',940);
+INSERT INTO Towary values(3,'{monitor}',600);
+
+zad 41
+
+CREATE OR REPLACE FUNCTION Podatek_VAT(integer)
+RETURNS real AS 
+$$
+	DECLARE wyn real;
+	BEGIN SELECT 0.23*$1 INTO wyn;
+	END;
+$$
+LANGUAGE 'plpgsql';
+
+zad 42
+
+CREATE TABLE Towary2(cena_vat real,cena_brutto real) INHERITS (Towary);
+
+CREATE OR REPLACE FUNCTION funkcja1() 
+RETURNS TRIGGER AS
+$$
+	BEGIN NEW.cena_vat=podatek_vat(NEW.cena_netto);
+	RETURN NEW;
+	END; 
+$$
+LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION Wypisywacz() 
+RETURNS TRIGGER AS 
+$$
+	BEGIN 
+	NEW.cena_brutto=NEW.ceona_netto+podatek_vat(NEW.cena_netto);
+	RETURN NEW;
+	END;
+$$
+LANGUAGE 'plpgsql';
+
+CREATE TRIGGER tow_trig2
+BEFORE INSERT OR UPDATE ON Towary2
+FOR EACH ROW
+EXECUTE PROCEDURE Wypisywacz();
+
+
+
+
+ 
+
+
+
+
