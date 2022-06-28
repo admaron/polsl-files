@@ -1,0 +1,1120 @@
+?#[[Do katalogów, których nie nale¿y siê spodziewaæ w katalogu g³ównym systemu unixowego, zaliczamy:]]
+##[[Moje Dokumenty]]
+# [[/usr]]
+# [[/home]]
+##[[Program Files]]
+# [[/etc]]
+##[[Windows]]
+
+?@[[W module j¹dra systemu Linux zdefiniowano zmienn¹ globaln¹:
+static int __init zmienna =4;
+Co oznacza __init w tej definicji?]]
+@ [[Zmienn¹, któr¹ musi zaincjalizowaæ u¿ytkownik podczas ³adowania modu³u do j¹dra]]
+@ [[Zmienn¹ inicjalizacyjn¹, która mo¿e byæ wykorzystywana tylko w funkcji inicjalizacyjnej, a nastêpnie
+jest usuwana]]
+@@[[Jest to niepoprawny zapis i nast¹pi b³¹d kompilacji]]
+@ [[Zmienn¹, która zosta³a wstêpnie zainicjalizowana (nadano jej wartoœæ)]]
+
+?![[Jak nazywa siê polecenie konsolowe do zmiany katalogu?]]
+!![[cd]]
+
+?@[[Do zapisu przetwarzania w pêtli w jêzyku basha mo¿na u¿yæ instrukcji:]]
+@ [[wy³¹cznie "do"]]
+@ [[wy³¹cznie "for"]]
+@ [[wy³¹cznie "while"]]
+@ [[wy³¹cznie "until"]]
+@@[["for", "while" i "until"]]
+
+?#[[Programami do kontroli dostêpnego miejsca na dysku s¹:]]
+# [[find]]
+##[[df]]
+# [[space]]
+##[[du]]
+
+?![[Podaj nazwê instrukcji konsolowej wyœwietlaj¹cej zawartoœæ katalogu w systemach unixowych]]
+!![[ls]]
+
+?@[[Format instrukcji warunkowej w bash-u to:]]
+@@[[if ... fi]]
+@ [[jezeli ... koniec]]
+@ [[if ... end]]
+@ [[czy ... koniec]]
+
+?![[Zapisz w jêzyku basha definicjê zmiennej "LICZBA" o zawartoœci 256]]
+!![[LICZBA=256]]
+
+?@[[Do czego wykorzystywany jest tryb pracy pojedynczego u¿ytkownika (single user mode, tryb nr 1)
+w systemach unixowych?]]
+@ [[Jest to zwykle domyœlny tryb pracy]]
+@@[[Do powa¿nych prac administracyjnych]]
+@ [[Do pracy w trybie graficznym]]
+@ [[Do zatrzymania komputera]]
+@ [[Do aktualizacji programów u¿ytkowych]]
+
+?@[[Do czego s³u¿y pakiet oprogramowania Tripwire?]]
+@@[[Do sprawdzania integralnoœci systemu]]
+@ [[Do sprawdzania bezpieczeñstwa hase³]]
+@ [[Jest to program antywirusowy dla systemu Linux]]
+@ [[Do tworzenia raportu z logów systemowych]]
+@ [[Do ochrony poczty przed spamem]]
+
+?#[[Zaznacz nazwy programów, które s³u¿¹ administratorom do wyszukiwania niebezpiecznych hase³ na serwerach
+wielodostêpowych.]]
+##[[John the Ripper]]
+# [[Castor and Polluxs]]
+# [[Pawel i Gawel]]
+# [[David and Goliat]]
+##[[Cain and Abel]]
+
+?#[[W poni¿szym kodzie najprostszego chyba modu³u j¹dra celowo wprowadzono b³êdy:
+#include <linux/module.h>
+#include <linux/kernel.h>
+int init_module( void ){
+
+printf( KERN_INFO "Hello, world 1!\n" );
+return 0;
+}
+void cleanup_module( void ){
+
+printf( KERN_INFO "Goodbye, world 1!\n" );
+}
+
+Z poni¿szych opcji wybierz te, które opisuj¹ wprowadzone w kodzie modu³u b³êdy]]
+Wybierz co najmniej jedn¹ odpowiedŸ
+# [[B³êdem jest brak funkcji main()]]
+# [[B³edem jest u¿ycie niezdefinowanego "KERN_INFO" w argumencie funkcji printf()]]
+##[[B³êdem jest u¿ycie funkcji printf()]]
+# [[Kod jest ca³kowicie poprawny!]]
+# [[B³êdem jest nie za³¹czenie "stdio.h"]]
+
+?$[[Dopasuj nazwê programu do manipulacji modu³ami j¹dra do funkcjonalnoœci, któr¹ on zapewnia.]]
+$F[[Za³adowanie modu³u do j¹dra ze sprawdzeniem zale¿noœci i za³adowaniem wymaganych modu³ów]]
+$E[[Wypisanie informacji o module]]
+$A[[Wypisanie listy modu³ów za³adowanych do j¹dra]]
+$B[[Za³adowanie modu³u do j¹dra bez sprawdzenia zale¿noœci]]
+$$[[lsmod]]
+$$[[insmod]]
+$$[[rmmod]]
+$$[[kernmod]]
+$$[[modinfo]]
+$$[[modprobe]]
+
+
+?![[Podaj wywo³anie funkcji inkrementuj¹cej licznik u¿ycia modu³u j¹dra systemu Linux]]
+!![[try_module_get(THIS_MODULE)]]
+
+?![[Podaj nazwê makra (bez parametrów) s³u¿¹cego do przes³ania pojedynczego znaku z pamiêci w przestrzeni
+u¿ytkownika do modu³u j¹dra systemu Linux]]
+!![[get_user()]]
+
+?@[[Co nazywamy sygna³em w kontekœcie programowania dla œrodowiska KDE/Qt?]]
+@@[[Obiekt wyemitowany w reakcji na jakieœ zdarzenie]]
+@ [[Ka¿d¹ funkcjê sk³adow¹ klasy dziedzicz¹cej QObject]]
+@ [[Ka¿d¹ funkcjê emituj¹c¹ sygna³ alarmowy]]
+@ [[Ka¿d¹ bezargumentow¹ funkcjê, zwracaj¹c¹ void]]
+@ [[Ka¿d¹ funkcjê sk³adow¹ klasy drugiego stopnia]]
+
+?#[[Z poni¿szej listy wybierz te opcje, które poprawnie opisuj¹ mechanizm gniazd i sygna³ów œrodowiska KDE/Qt.]]
+##[[Gniazda i sygna³y stanowi¹ centralne pojêcie w programowaniu dla KDE/Qt]]
+# [[Gniazdo i sygna³ mog¹ siê ró¿niæ typem argumentu]]
+# [[Zestaw gniazd i sygna³ów jest predefiniowany w bibliotece Qt i nie mo¿na go zmieniaæ]]
+##[[Ka¿da klasa u¿ywaj¹ca gniazd i sygna³ów musi dziedziczyæ klasê QObject (lub pochodn¹)]]
+##[[Jeden sygna³ mo¿e trafiæ do wielu gniazd w ró¿nych obiektach]]
+##[[Jedno gniazdo mo¿e przyjmowaæ wiele ró¿nych sygna³ów od ró¿nych obiektów]]
+# [[Gniazda i sygna³y s¹ ze sob¹ œciœle powi¹zane: obiekt emituj¹cy sygna³ wie dok³adnie, do ilu
+gniazd i gdzie sygna³ trafi]]
+
+?#[[Zaznacz te z poni¿szych twierdzeñ, które s¹ prawdziwe w stosunku do pojêcia systemów czasu rzeczywistego.]]
+# [[Spe³nienie warunków czasowych gwarantuje poprawnoœæ dzia³ania systemów czasu rzeczywistego.]]
+##[[System czasu rzeczywistego odpowiada w sposób przewidywalny/deterministyczny (w okreœlonym czasie)
+na zewnêtrzne zdarzenia nap³ywaj¹ce w sposób nieprzewidywalny/niedeterministyczny.]]
+# [[Systemy wbudowane s¹ systemami czasu rzeczywistego.]]
+##[[Funkcja u¿ytecznoœci podaje ocenê korzyœci w zale¿noœci od czasu uzyskania odpowiedzi.]]
+##[[W przypadku rygorystycznych systemów czasu rzeczywitego funkcja u¿ytecznoœci przyjmuje wartoœæ zero dla
+chwil czasowych wiêkszych od narzucowych limitów czasowych.]]
+# [[Aplikacje czasu rzeczywistego s¹ programowane w asemblerze.]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe.]]
+# [[Narzut czasowy na utworzenie nowego w¹tku jest wiêkszy ni¿ w przypadku tworzenia nowego procesu.]]
+##[[Komunikacja miêdzy w¹tkami wchodz¹cymi w sk³ad jednego procesu jest szybsza ni¿ miêdzy procesami.]]
+##[[Zbiór procesów/w¹tków jest w stanie zakleszczenia, je¿eli ka¿dy proces/w¹tek z tego zbioru czeka na
+zdarzenie, które mo¿e byæ spowodowane tylko przez inny proces/w¹tek z tego zbioru.]]
+##[[Czas prze³¹czania kontekstu procesora miêdzy w¹tkami wchodz¹cymi w sk³ad jednego procesu jest zwykle
+mniejszy ni¿ w przypadku procesów.]]
+##[[Wszystkie w¹tki utworzone w ramach jednego procesu wspó³dziel¹ przestrzeñ adresow¹, ale ka¿dy w¹tek
+ma równie¿ pewien zestaw prywatnych atrybutów i zasobów.]]
+# [[Wyœcigi to konstrukcje wystêpuj¹ce w aplikacji wspó³bie¿nej powoduj¹ce, ¿e wynik wykonania aplikacji
+w sposób deterministyczny zale¿y od czasu wykonania ci¹gu instrukcji.]]
+
+?#[[Zaznacz zalety systemu operacyjnego wynikaj¹ce z architektury opartej na mikroj¹drze w porównaniu z architektur¹
+opart¹ na j¹drze monolitycznym.]]
+##[[Mo¿liwoœæ dynamicznego uruchomiania procesów systemowych.]]
+##[[Wzajemna izolacja procesów.]]
+##[[Mo¿liwoœæ niezale¿nego szeregowania procesów systemowych.]]
+# [[Wiêksza œrednia wydajnoœæ pracy sytemu operacyjnego.]]
+# [[Szybsza komunikacja miêdzy procesami udostêpniaj¹cymi us³ugi systemowe nie implementowane w mikroj¹drze
+w porównaniu z komunikacj¹ odpowiednich modu³ów j¹dra monolitycznego realizuj¹cych te zadania.]]
+
+?#[[Zaznacz, te z poni¿szych stwierdzeñ dotycz¹cych obszarów objêtych standaryzacj¹ w ramach POSIX, które s¹ prawdziwe.]]
+# [[Standaryzacja w ramach POSIX specyfikuje zadania j¹dra systemu operacyjnego.]]
+##[[Standaryzacja w ramach POSIX obejmuje interfejs u¿ytkownika czyli polecenia systemowe.]]
+# [[Standaryzacja w ramach POSIX obejmuje architekturê systemu operacyjnego.]]
+##[[Standaryzacja w ramach POSIX obejmuje interfejs pomiêdzy aplikacj¹ a systemem operacyjnym.]]
+
+?#[[Zaznacz, które z poni¿szych stwierdzeñ dotycz¹cych systemów operacyjnych s¹ prawdziwe.]]
+##[[W przeciwieñstwie do sieciowych systemów operacyjnych, w rozproszonych systemach operacyjnych
+nie ma rozró¿nienia na zasoby lokalne i zdalne. W systemie tym z punktu widzenia u¿ytkownika wszystkie
+zasoby s¹ lokalne.]]
+##[[W przypadku sieciowych systemów operacyjnych zak³ada siê, ¿e poszczególne wêz³y s¹ obs³ugiwane przez
+lokalne systemy operacyjne, które udostêpniaj¹ u¿ytkownikom zbiór us³ug sieciowych. Systemy wchodz¹ce w
+sk³ad ca³ego systemu sieciowego nie musz¹ byæ jednorodne. U¿ytkownicy s¹ œwiadomi istnienia poszczególnych
+maszyn w systemie i mog¹ wykonywaæ swoje zadania wskazuj¹c na system, który ma tego dokonaæ.]]
+##[[W wielozadaniowych systemach operacyjnych instalowanych na maszynach jednoprocesorowych i jednordzeniowych
+wielozadaniowoœæ jest realizowana przez wykonywanie zadañ z podzia³em czasu. Paradoksalnie równoczesne
+wykonianie wielu zadañ w systemie wielozadaniowym zainstalowanym na takiej platformie sprzêtowej trwa
+d³u¿ej ni¿ nie równoczesne wykonanie tych zadañ. Jest to spowodowane koniecznoœci¹ prze³¹czania
+kontekstu procesora.]]
+##[[Przez rozproszony system operacyjny rozumiemy system, który z punktu widzenia u¿ytkownika wygl¹da jak
+zwyk³y system scentralizowany, ale jest uruchomiony na wielu niezale¿nych jednostkach obliczeniowych,
+przy czym: u¿ycie wielu jednostek obliczeniowych jest dla u¿ytkownika niewidoczne (przezroczyste),
+u¿ytkownik widzi system jako wirtualny komputer, nie zaœ jako zbiór osobnych maszyn po³¹czonych sieci¹.]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do mechanizmu przesy³ania wiadomoœci
+w systemie QNX.]]
+# [[Wiadomoœci maj¹ w systemie QNX pewn¹ predefiniowan¹ strukturê.]]
+##[[Prorytet procesu odbieraj¹cego mo¿e byæ dynamicznie zmieniany i ustawiany na priorytet procesu,
+od którego wiadomoœæ zosta³a odebrana.]]
+##[[Odbieranie wiadomoœci oczekuj¹cych w kolejce mo¿e byæ realizowane w kolejnoœci zale¿nej od priorytetów
+procesów wysy³aj¹cych te wiadomoœci.]]
+# [[Przesy³anie wiadomoœci miêdzy procesami wykonuj¹cymi siê na odrêbnych wêz³ach sieci lokalnej jest mo¿liwe
+dziêki us³udze GNS i mo¿liwoœci rejestracji lokalnych nazw symbolicznych przez procesy.]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do wspó³dzielenia pamiêci w systemie QNX.]]
+# [[Komunikacja przez wspóln¹ pamiêæ zapewnia synchronizacjê komunikuj¹cych siê procesów.]]
+# [[Wspólny obszar pamiêci mog¹ dzieliæ procesy wykonywane na ró¿nych wêz³ach sieci lokalnej.]]
+##[[Przestrzeñ adresowa procesu jest to zbiór wszystkich dopuszczalnych adresów w obrêbie obszaru pamiêci
+przydzielonej danemu procesowi.]]
+##[[W momencie, gdy tworzony jest proces zarz¹dca procesów przydziela ka¿demu procesowi segmenty pamiêci
+przeznaczone na: blok kontrolny, kod, dane i stos. Segmenty te przydzielane s¹ na wy³¹cznoœæ ka¿demu
+procesowi.]]
+##[[Wspó³dzielenie pamiêci poprawia efektywnoœæ wykorzystania zasobu jakim jest pamiêæ dziêki mo¿liwoœci
+wspó³dzielenia przez wiele procesów obszaru kodu oraz kodu funkcji bibliotecznych.]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do inwersji priorytetów w systemie QNX.]]
+##[[Inwersja priorytetów to zjawisko polegaj¹ce na wykonywaniu siê w¹tku o ni¿szym priorytecie, w sytuacji,
+gdy w¹tek o wy¿szym priorytecie pozostaje zablokowany na operacji synchronizacyjnej.]]
+# [[W przypadku strategii dziedziczenia priorytetu zasobowi przydziela siê pewien statyczny priorytet wiêkszy
+od najwy¿szego priorytetu w¹tków, które bêd¹ konkurowaæ o dany zasób. Gdy któryœ w¹tek zajmuje zasób
+zostaje mu tymczasowo przydzielony priorytet zwi¹zany z tym zasobem. Po zwolnieniu zasobu priorytet
+w¹tku wraca do wartoœci pocz¹tkowej.]]
+##[[Zapobieganie inwersji priorytetów jest realizowane w systemie QNX w oparciu o strategiê: dziedziczenia
+priorytetu lub protoko³u wykorzystuj¹cego tzw. pu³ap priorytetów.]]
+# [[Protokó³ z pu³apem priorytetu polega na tymczasowym zwiêkszeniu priorytetu w¹tku maj¹cego zasób do
+najwy¿szego priorytetu z priorytetów w¹tków ubiegaj¹cych siê o zajêcie tego zasobu.]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do semaforów w systemie QNX.]]
+# [[Semafory nienazwane to obiekty widoczne w systemie plików identyfikowane przez swoj¹ nazwê, które
+dzia³aj¹ równie¿ w œrodowisku sieciowym.]]
+##[[Semafor w systemie QNX jest abstrakcyjnym obiektem, z którym zwi¹zany jest licznik L przyjmuj¹cy wartoœci
+nieujemne i kolejka procesów oczekuj¹cych na semaforze.]]
+##[[W przypadku zastosowania semafora do synchronizacji dostêpu do dzielonych zasobów, bie¿¹c¹ wartoœæ
+licznika semafora mo¿na interpretowaæ jako liczbê wspó³dzielonych zasobów, które s¹ wolne.]]
+##[[Dzia³anie funkcji Sem_wait(S) wykonanej na semaforze S jest nastêpuj¹ce. Gdy L>0 to L=L-1;
+gdy L=0 zablokuj proces, który wykona³ funkcje sem_wait(S) i wprowadŸ do kolejki procesów oczekuj¹cych
+na semaforze S. (L - bie¿¹ca wartoœæ licznika semafora S)]]
+##[[W przypadku zastosowania semafora do rozwi¹zania zadania wzajemnego wykluczania, bie¿¹c¹ wartoœæ
+licznika semafora mo¿na interpretowaæ jako liczbê procesów, które mog¹ jeszcze wejœæ do sekcji krytycznej.]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do mechanizmu przesy³ania impulsów
+w systemie QNX.]]
+# [[Mechanizm przesy³ania impulsów stosowany jest w przypadkach, gdy proces wysy³aj¹cy impuls wymaga
+informacji zwrotnej.]]
+##[[Mechanizm przesy³ania impulsów stosowany jest w procedurach obs³ugi przerwañ, które po wyst¹pieniu
+przerwania generuj¹ impuls odblokowuj¹cy proces obs³uguj¹cy przerwanie.]]
+# [[Impulsy w systemie QNX nie maj¹ narzuconej struktury.]]
+# [[W przypadku, gdy adresat nie jest gotowy do odebrania wys³anych impulsów nie s¹ one kolejkowane.]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do kolejek komunikatów w systemie QNX.]]
+##[[Komunikatom mo¿na nadawaæ priorytety.]]
+# [[Nie jest mo¿liwe testowanie bie¿¹cego statusu kolejki komunikatów.]]
+##[[Kolejki komunikatów s¹ stosowane do komunikacji w przypadku, gdy konieczne jest buforowanie informacji
+przesy³anych z ró¿nymi prêdkoœciami miêdzy procesem wysy³aj¹cym i odbieraj¹cym.]]
+# [[Dane zapisywane w potoku/kolejce FIFO oraz komunikaty zapisywane w kolejce komunikatów s¹ separowane.]]
+##[[Kolejki komunikatów s¹ implementowane jako pliki specjalne.]]
+# [[Jeœli wiêcej ni¿ jeden w¹tek jest zablokowany w oczekiwaniu na miejsce w kolejce (zapis) lub nadejœcie
+komunikatu (odczyt) to jako pierwszy odblokowany bêdzie w¹tek oczekuj¹cy najd³u¿ej]]
+##[[Mo¿na spowodowaæ, aby pojawienie siê komunikatu w pustej kolejce (zmiana stanu z "pusta" na "niepusta")
+powodowa³o zawiadomienie w postaci wys³ania impulsu lub sygna³u do procesu.]]
+
+?#[[Które elementy NIE S¥ czêœci¹ trybu u¿ytkownika w systemie Microsoft Windows XP/Vista/7?]]
+# [[Aplikacje]]
+# [[Us³ugi]]
+##[[Grafika]]
+# [[Biblioteki]]
+
+?@[[Co to jest Windows API]]
+@ [[Access Packet Interface]]
+@@[[Application Program Interface]]
+@ [[Access Program Interface]]
+@ [[Application Packet Interface]]
+
+?@[[Co to jest rejestr w systemie Microsoft Windows]]
+@ [[Jest to ci¹g poleceñ wykonywalnych]]
+@ [[Jest to zbiór danych]]
+@@[[Jest to wewnetrzna baza danych zawieraj¹ca informacje o systemie]]
+@ [[Jest to zarz¹dzanie systemem]]
+
+?@[[System Microsoft Windows XP jest systemem ilu bitowym?]]
+Wybierz odpowiedŸ]]
+@@[[32]]
+@ [[64]]
+@ [[16]]
+@ [[8]]
+
+?#[[Wybierz dostêpne na rynku systemy wirtualizacji.]]
+##[[Microsoft Hyper-V]]
+# [[SuperVirt Virtual Server]]
+# [[Virtuoso VirtualPC]]
+##[[Vmware ESX]]
+
+?#[[Które warunki musz¹ byæ spe³nione warunki by system by³ Systemem Czasu Rzeczywistego - RTOS?]]
+##[[Zapewniona równoleg³oœæ]]
+##[[Okreœlone granice czasowe]]
+##[[Przewidywalnoœæ na pobudzenia]]
+##[[Spe³nione zale¿noœci od otoczenia]]
+
+?#[[Podaæ które polecenia wystêpuj¹ przy starcie systemu operacyjnego Micosoft Windows XP lub nowszego.]]
+# [[Start urz¹dzeñ wirtualnych - VirtualX.dll]]
+##[[Odczyt i za³adowanie sektora rozruchowego - Master Boot Record (MBR)]]
+##[[Tryb chroniony wraz ze stronicowaniem pamiêci - Hall.dll]]
+##[[Sprawdzanie sprzêtu - Ntdetect.com]]
+
+?@[[Który z poni¿szych sk³adników NIE JEST czêœci¹ systemu operacyjnego?]]
+@@[[Obs³uga niebezpieczeñstwa]]
+@ [[Zarz¹dzanie pamiêci¹]]
+@ [[Obs³uga sieci]]
+@ [[Zarz¹dzanie systemem plików]]
+
+?@[[Które z poni¿szych okreœleñ NIE opisuj¹ systemów na urz¹dzenia mobilne (smartfony)?]]
+@ [[Obs³uga ekranu dotykowego]]
+@ [[Dostêp do sieci Internet]]
+@@[[Zaawansowana edycja z³o¿onej grafiki i procesory przetwarzania tekstu]]
+@ [[praca na stosunkowo ma³o wydajnych procesorach]]
+
+?#[[Z czego sk³ada siê Windows API?]]
+# [[Biblioteki XLL]]
+##[[Obs³uga sieci]]
+##[[Przesy³anie komunikatów]]
+##[[Obs³uga grafiki i dŸwiêku]]
+
+?@[[Które z okreœleñ NIE jest w³asnoœæi¹ systemu operacyjnego czasu rzeczywistego w/g M. Timmermana?]]
+@ [[Przewidywalnoœæ odpowiedzi na pobudzenie]]
+@@[[Poprawnoœæ dzia³ania]]
+@ [[Równoleg³oœæ zadañ]]
+@ [[Okreœlone granice czasowe]]
+
+?#[[Jakie s¹ metody zapewnienia wy³¹cznego dostêpu do wspó³dzielonych danych?]]
+##[[Test&Set]]
+##[[Wy³¹czenie przerwañ]]
+##[[U¿ycie semaforów]]
+##[[Wy³¹czenie prze³¹czania zadañ]]
+
+?#[[Nale¿y zaznaczyæ komercyjne systemy czasu rzeczywistego]]
+# [[eCOS]]
+##[[QNX]]
+# [[uLinux]]
+##[[uCOS]]
+
+?#[[Zaznaczte spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe.]]
+##[[W ³agodnych systemach czasu rzeczywistego przekroczenie limitów czasowych powoduje obni¿enie wydajnoœci
+czasu systemu ale skutki naruszenia tych limitów s¹ odwracalne.]]
+# [[Dla poprawnego dzia³ania systemów czasu rzeczywistego bezwzglêdnie konieczne jest spe³nienie warunków
+czasowych. Warunki logiczne odgrywaj¹ natomast rolê drugorzêdn¹ i dopuszcza siê mo¿liwoœæ ich
+niespe³nienia.]]
+##[[Systemy operacyjne czasu rzeczywistego s¹ czêsci¹ sk³adow¹ systemów czasu rzeczywistego.]]
+##[[Dla zbudowania systemu spe³niaj¹cego wymagania ³agodnego systemu czasu rzeczywistego wystarczaj¹ce
+jest pos³u¿enie siê odpowiednim sprzetem i oprogramowaniem.]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe.]]
+# [[Procesy/w¹tki asynchroniczne realizuj¹ czynnoœci cykliczne.]]
+##[[Decyzjê o wznowieniu wykonania procesów/w¹tków drugoplanowych podejmuje modu³ j¹dra systemu
+operacyjnego odpowiedzialny za szeregowanie procesów/w¹tków.]]
+# [[W procesach/w¹tkach asynchronicznych nie wystêpuje punkt zablokownania.]]
+##[[W przypadku procesów/w¹tków synchronicznych aperiodycznych nie mo¿na wyznaczyæ harmonogramu czasów
+ich przysz³ych aktywacji poniewa¿ na podstawie informacji znanych w czasie bie¿¹cego wykonania wyznaczany
+jest czas ich kolejnej aktywacji.]]
+
+?$[[W rezultacie dzia³ania polecenia "ls -l" otrzymano liniê zaczynaj¹c¹ siê od nastêpuj¹cych liter:
+drwxr-xr--
+Aby rozszyfrowaæ liniê, dzielimy j¹ na cztery pola: pierwsze jednoliterowe,
+a nastêpnie trzy pola o d³ugoœci 3 liter:
+d | rwx | r-x | r-x
+1 | 2   | 3   | 4
+Dopasuj numer pola do jego znaczenia.]]
+$$[[1]]
+$$[[2]]
+$$[[3]]
+$$[[4]]
+$C[[prawa dostêpu dla grupy]]
+$A[[typ pliku]]
+$D[[prawa dostêpu dla innych ni¿ w³aœciciel i grupa]]
+$B[[prawa dostêpu dla w³aœcicela]]
+
+?![[Jakim znakiem nale¿y zakoñczyæ wydawanie polecenia na konsoli, aby polecenie (program) wykona³o siê w tle?]]
+!![[&]]
+
+?![[Napisz s³owo kluczowe koñcz¹ce blok instrukcji wyboru case.]]
+!![[esac]]
+
+?![[Jak nazywa siê i gdzie jest po³o¿ony plik konfiguracyjny procesu init (podaj pe³n¹ œcie¿kê, np. "/var/log/init")]]
+!![[/etc/inittab]]
+
+?@[[Co w kontekœcie bezpieczeñstwa serwera internetowego oznacza s³owo "rootkit"?]]
+@ [[Popularne narzêdzie u³atwiaj¹cy usuniêcie korzenia drzewa z ziemi]]
+@ [[Gotowy zestaw narzêdzi do zabezpieczanie komputera przed w³amaniami]]
+@ [[Gotowy zestaw narzêdzi administracyjnych dla superu¿ytkownika (root-a)]]
+@ [[Nie ma takiego pojêcia]]
+@@[[Gotowy zestaw narzêdzi do ukrywania obecnoœci hackera w systemie]]
+
+?#[[W poni¿szym wykazie zaznacz podstawowe obowi¹zki administratora, który troszczy siê o bezpieczeñstwo]]
+swojego serwera. Wybierz co najmniej jedn¹ odpowiedŸ]]
+##[[Postawienie zapory ogniowej (firewalla)]]
+##[[Dbanie o bezpieczeñstwo hase³]]
+##[[Wy³¹czenie wszystkich niepotrzebnych us³ug]]
+##[[Regularne aktualizowanie oprogramowania]]
+##[[Regularne przegl¹danie logów systemowych]]
+
+?#[[Z poni¿szych zdañ zaznacz te, które w prawid³owy sposób opisuj¹ ró¿nice miêdzy modu³ami j¹dra a
+programami u¿ytkownika. Wybierz co najmniej jedn¹ odpowiedŸ]]
+##[[Modu³y j¹dra nie posiadaj¹ funkcji main()]]
+##[[Modu³y j¹dra nie maj¹ dostêpu do biblioteki standardowej]]
+##[[Ka¿dy modu³ j¹dra musi za³¹czaæ plik nag³ówkowy]]
+##[[Modu³y j¹dra dzia³aj¹ w pierœcieniu zerowym architektury Intela i maj¹ dostêp do wszystkich zasobów]]
+# [[Modu³y j¹dra wypisuj¹ informacje za pomoc¹ funkcji printf()]]
+
+?#[[Na poni¿szej liœcie zaznacz typowe zadania wykonywane w funkcji inicjalizuj¹cej modu³
+urz¹dzenia znakowego w j¹drze.]]
+##[[Przydzia³ i inicjalizacja struktur i danych potrzebnych do dzia³ania]]
+##[[Identyfikacja numeru pobocznego i ew. aktualizacja struktury file_operations]]
+##[[Inkrementacja licznika u¿ycia modu³u]]
+# [[Dekrementacja licznika u¿ycia modu³u]]
+##[[Sprawdzenie dostêpnoœci sprzêtu]]
+
+?$[[Dopasuj funkcjonalnoœæ programu do jednego ze stopni omawianej na wyk³adzie struktury programów dla KDE]]
+$A[[Obs³uga zdarzeñ œrodowiska graficznego]]
+$B[[Obs³uga paska stanu]]
+$A[[Przetwarzanie argumentów linii poleceñ]]
+$B[[Obs³uga menu]]
+$C[[Obs³uga g³ównej funkcji programu (œrodkowej czêœci okna)]]
+$B[[Tworzenie i obs³uga paska narzêdziowego]]
+$$[[1-wszy stopieñ]]
+$$[[2-gi stopieñ]]
+$$[[3-ci stopieñ]]
+
+?#[[Zaznacz systemy plików wspierane przez system operacyjny QNX.]]
+##[[CIFS]]
+##[[NFS]]
+##[[Linux Ext2]]
+# [[NTFS]]
+##[[DOS FAT 32]]
+# [[UFS - (Unix File System)]]
+# [[exFAT - (Extended File Allocation Table)]]
+
+?#[[Zaznacz platformy sprzêtowe, na których mo¿na instalowaæ system operacyjny QNX.]]
+##[[MIPS]]
+##[[x86/Pentium]]
+# [[SPARC]]
+# [[Motorola 68000]]
+##[[PowerPC]]
+##[[XScale]]
+##[[SH-4]]
+##[[StrongARM]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe. Wybierz co najmniej jedn¹ odpowiedŸ]]
+##[[System wbudowany jest to system komputerowy bêd¹cy czêœci¹ wiêkszego systemu i wykonuj¹cy istotn¹
+czêœæ jego funkcji.]]
+##[[Oprogramowanie dla systemów wbudowanych tworzone jest w tzw. systemie macierzystym pracuj¹cym pod
+kontrol¹ pewnego systemu operacyjnego, w którym zainstalowane jest œrodowisko do tworzenia tego
+oprogramowania. Utworzone w systemie macierzystym oprogramowanie jest zapisywane do pamiêci nieulotnej
+(ROM, EPROM, Flash) systemu docelowego za pomoc¹ odpowiedniego interfejsu (JTAG, ISP, RS232). System
+docelowy pracuje najczêœciej pod kontrol¹ innego systemu operacyjnego ni¿ system macierzysty.]]
+# [[Aplikacje czasu rzeczywistego s¹ programowane w asemblerze.]]
+# [[Systemy wbudowane s¹ systemami czasu rzeczywistego.]]
+# [[System czasu rzeczywistego jest jednym z elementów systemu operacyjnego czasu rzeczywistego.]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do mechanizmu przesy³ania wiadomoœci
+w systemie QNX.]]
+##[[Proces znajduje siê w stanie "SEND-blocked" je¿eli podj¹³ próbê wys³ania wiadomoœci ale adresat
+nie by³ i nadal nie jest gotowy do jej odebrania.]]
+# [[Proces jest prze³¹czany ze stanu "SEND-blocked" do stanu "REPLY-blocked" je¿eli adresat wiadomoœci
+wykona funkcjê Reply.]]
+##[[W przypadku gdy proces znajduje siê w stanie "Wykonywany" i pojawia siê w systemie inny proces o priorytecie
+wy¿szym od niego modu³ j¹dra odpowiedzialny za szeregowanie procesów prze³¹cza ten proces w stan "Gotowy".]]
+# [[Komunikacja za pomoc¹ przesy³ania wiadomoœci zapewnia wzajemn¹ synchronizacjê komunikuj¹cych siê procesów.
+Wykonanie procesu odbieraj¹cego wiadomoœci zawsze jest wstrzymywane na pewien czas.]]
+
+?#[[Zaznacz to z poni¿szych funkcji, które s¹ realizowane przez mikroj¹dro systemu operacyjnego QNX.]]
+# [[Koordynacja pracy urz¹dzeñ zewnêtrznych.]]
+##[[Odbieranie przerwañ.]]
+# [[Obs³uga systemu plików.]]
+# [[Kontrola i przydzia³ pamiêci operacyjnej dla uruchomionych procesów.]]
+##[[Nadzorowanie komunikacji miêdzy w¹tkami/procesami.]]
+##[[Nadzorowanie synchronizacji miêdzy w¹tkami/procesami.]]
+
+?#[[Nale¿y podaæ które z poni¿szych systemów operacyjnych s¹ systemami serwerowymi firmy Microsoft?]]
+##[[Windows Server 2003]]
+# [[Windows Server 2010]]
+##[[Windows Server 2008]]
+# [[Windows Server 2006]]
+##[[Windows Server 2012]]
+
+?#[[Które elementy NIE S¥ czêœci¹ trybu j¹dra w systemie Microsoft Windows XP/Vista/7?]]
+# [[Sterowniki urz¹dzeñ]]
+# [[HAL]]
+##[[Testy obci¹¿eniowe]]
+# [[Grafika]]
+
+?@[[Która z wersji systemu Microsoft Windows pojawi³a siê najwczeœniej na rynku?]]
+@@[[Windows for Workgroups 3.1]]
+@ [[Windows Vista]]
+@ [[Windows 2000]]
+@ [[Windows 95]]
+
+?#[[Które z poni¿szych twierdzeñ najlepiej oddaj¹ zalety wirtualizacji jednego systemu systemu]]
+operacyjnego na innej platformie?]]
+##[[Mo¿liwoœæ dzia³ania wielu systemów operacyjnych na fizycznej maszynie]]
+# [[Znacz¹ce pogorszenie niezawodnoœci dzia³ania systemu]]
+##[[Lepsze zarz¹dzanie zasobami sprzêtowymi i programowymi]]
+# [[Bardzo du¿e zwiêkszenie kosztów sprzêtu]]
+
+?![[Jak nazywa siê polecenie, które wyœwietla informacjê o bie¿¹cym katalogu i prowadz¹cej do niego œcie¿ce?]]
+!![[pwd]]
+
+?$[[Dopasuj nazwy procesów systemowych (daemons) do funkcji, które wykonuj¹]]
+$D[["Superserwer" sieciowy]]
+$A[[Proces zapisuj¹cy logi systemowe]]
+$G[[Serwer poczty]]
+$H[[Serwer DNS]]
+$C[[Proces umo¿liwiaj¹cy pojedyncze wykonanie zadania o zadanym czasie]]
+$B[[Proces umo¿liwiaj¹cy cykliczne uruchomianie zadañ]]
+$$[[syslog]]
+$$[[crond]]
+$$[[atd]]
+$$[[inetd]]
+$$[[sshd]]
+$$[[httpd]]
+$$[[postfix]]
+$$[[named]]
+$$[[routed]]
+
+?@[[W jaki sposób dbaj¹cy o bezpieczeñstwo administrator traktuje logi systemowe?]]
+@ [[W ogóle o nie nie dba, bo i tak zostaj¹ zhackowane jako pierwsze]]
+@ [[Regularnie je przegl¹da w poszukiwaniu podejrzanych wpisów]]
+@@[[Stosuje specjalne programy do tworzenia raportów z logów; raporty regularnie przegl¹da]]
+@ [[Zagl¹da do logów od czasu do czasu]]
+@ [[Nie przegl¹da logów, bo zajmuje to zbyt du¿o czasu]]
+
+?@[[W jaki sposób w systemach linuxowych realizowany jest niskopoziomowy dostêp do elementów wyposa¿enia
+komputera takich, jak klawiatura, ekran, karta dŸwiêkowa, itp. przez programy u¿ytkownika?]]
+@@[[Przez pliki urz¹dzeñ blokowych i znakowych oraz interfejsy sieciowe]]
+@ [[Za pomoc¹ specjalnych programów]]
+@ [[Przy u¿yciu bibliotek .dll]]
+@ [[Przez porty COM i LPT]]
+
+?![[Podaj wywo³anie funkcji dekrementuj¹ce licznik u¿ycia modu³u j¹dra systemu Linux.]]
+!![[module_put(THIS_MODULE)]]
+
+?![[Podaj nazwê œrodowiska do tworzenia oprogramowania pod KDE]]
+!![[kdevelop]]
+
+?#[[Zaznacz te spoœród poni¿szych systemów operacyjnych, które s¹ systemami operacyjnymi czasu rzeczywistego.]]
+##[[eCOS]]
+##[[LynxOS]]
+# [[UNIX]]
+# [[Windows NT]]
+# [[Linux]]
+##[[VxWorks]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do potoków i kolejek FIFO w systemie QNX.]]
+# [[Operacja zapisu do potoku lub kolejki nigdy nie powoduje wstrzymania wykonania procesu.]]
+##[[Komunkacja za pomoc¹ potoków jest ograniczona do procesów "spokrewnionych".]]
+# [[Pojemnoœæ kolejki/potoku jest nieograniczona.]]
+##[[Potoki i kolejki FIFO umo¿liwiaj¹ komunikacjê jednokierunkow¹ a ró¿nica miêdzy nimi polega na sposobie
+implementacji.]]
+# [[Potoki s¹ implementowane jako pliki specjalne widziane w systemie plików.]]
+# [[Komunkacja za pomoc¹ potoków lub kolejek FIFO nie gwarantuje synchronizacji komunikuj¹cych siê procesów.]]
+
+?@[[Polecenie mkdir s³u¿y do:]]
+@ [[usuwania katalogów]]
+@ [[tworzenia dowi¹zañ symbolicznych]]
+@@[[tworzenia katalogów]]
+@ [[usuwania plików]]
+@ [[tworzenia zwyk³ych plików]]
+
+?@[[Zmienna specjalna basha $? oznacza:]]
+@ [[systemowy numer procesu skryptu lub funkcji]]
+@ [[liczbê parametrów skryptu lub funkcji]]
+@ [[pierwszy parametr skryptu lub funkcji]]
+@@[[kod zakoñczenia ostatniego polecenia lub potoku]]
+
+?![[Zapisz w jêzyku basha definicjê zmiennej PLIKI zawieraj¹cej wynik wykonania polecenia: ls -l]]
+!![[PLIKI=$(ls -l)]]
+
+?@[[Co zawieraj¹ katalogi startowe systemu uruchomieniowego SystemV, czyli katalogi /etc/rc1.d, /etc/rc2.d, itd.
+(w niektórych dystrybucjach /etc/rc.d/rc1.d, /etc/rc.d/rc2.d, itd).]]
+@ [[Program "init" i jego pliki konfiguracyjne]]
+@ [[Skrypty startowe]]
+@@[[Dowi¹zania symboliczne do skryptów startowych]]
+@ [[Pliki z logami tworzonymi podczas startu systemu]]
+@ [[Nie ma takich katalogów]]
+
+?@[[Co nazywamy gniazdem w kontekœcie programowania w œrodowisku KDE/Qt?]]
+@ [[Ka¿d¹ funkcjê sk³adow¹ klasy dziedzicz¹cej QObject]]
+@ [[Ka¿d¹ statyczn¹ funkcjê sk³adow¹ klasy]]
+@@[[Funkcjê, sk³adow¹ klasy, która mo¿e byæ wywo³ana w reakcji na sygna³]]
+@ [[Gniazdko sieciowe 230 V]]
+@ [[Ka¿d¹ funkcjê klasy drugiego stopnia]]
+
+?#[[Do klas podstawowych, niezbêdnych nawet w najprostszej aplikacji GUI dla œrodowiska KDE, nale¿¹:]]
+##[[KMainWindow lub pochodna]]
+# [[KAction lub pochodna]]
+##[[KApplication lub pochodna]]
+# [[KJava lub pochodna]]
+# [[KAboutData]]
+# [[KTextEdit lub pochodna]]
+# [[KMenu]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do mechanizmu przesy³ania sygna³ów
+w systemie QNX.]]
+# [[W przypadku wys³ania sygna³u do procesu wielow¹tkowego zostaje on skierowany do ka¿dego w¹tku wchodz¹cego
+w sk³ad tego procesu]]
+# [[Je¿eli do procesu bêd¹cego w stanie zablokowania na operacji przesy³ania wiadomoœci zostaje skierowany
+sygna³ w stosunku, do którego ma on zadeklarowan¹ funkcjê obs³ugi to proces jest odblokowywany, wykonywana
+jest funkcja obs³ugi sygna³u po czym wraca on do stanu zablokowania na operacji przesy³ania wiadomoœci.]]
+##[[Istniej¹ sygna³y, których nie mo¿na ignorowaæ.]]
+##[[Domyœln¹ reakcj¹ na dostarczenie sygna³u standardowego jest automatyczne zakoñczenie wykonania procesu,
+do którego zosta³ on skierowany.]]
+# [[Przesy³anie sygna³ów jest pó³synchronicznym mechanizmem komunikacji stosowanym do sygnalizacji
+zaistnienia sytuacji wyj¹tkowych w systemie.]]
+##[[Maskowanie sygna³u jest równoznaczne z od³o¿eniem reakcji zwi¹zanej z jego dostarczeniem do momentu
+usuniêcia maski.]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do szeregowania procesów/w¹tków
+w systemie QNX.]]
+# [[Zarówno priorytet jak i algorytm szeregowania s¹ statycznymi parametrami w¹tku, które nie mog¹ byæ
+dynamicznie zmieniane w trakcie jego wykonywania.]]
+##[[W algorytmie szeregowania sporadycznego bud¿et procesu jest odnawiany przez zdarzenia odnawiaj¹ce
+generowane w momencie gdy w¹tek traci sterowanie w wyniku dobrowolnej blokady lub wyczerpania bud¿etu.]]
+##[[W przypadku algorytmu szeregowania sporadycznego zdarzenie odnawiaj¹ce charakteryzuje siê dwoma
+parametrami: bud¿etem odnowienia równym wielkoœci czasu procesora zu¿ytego przez w¹tek od ostatniego
+wznowienia do ostatniego zablokowania oraz czasem odnowienia, po którym w¹tkowi przyznawany jest dodatkowy
+bud¿et. Czas odnowienia równy jest czasowi ostatniego wznowienia w¹tku, do którego dodany jest
+okres odnawiania.]]
+##[[Maksymalna liczba zdarzeñ odnawiaj¹cych, które s¹ pamiêtane przez system w przypadku algorytmu
+sporadycznego jest ograniczona by zbytnio nie obci¹¿aæ systemu.]]
+# [[Algorytm sporadyczny jest domyœlnym algorytmem szeregowania procesów w systemie QNX.]]
+##[[W algorytmie szeregowania sporadycznego priorytet procesu mo¿e oscylowaæ miêdzy tzw. poziomem
+pierwszoplanowym (normalnym), a poziomem drugoplanowym (niskim).]]
+
+?#[[Filtrem - prostym programem u³atwiaj¹cym pracê na konsoli - s¹ nastêpuj¹ce z poni¿szych programów:]]
+##[[less]]
+##[[tail]]
+##[[strings]]
+##[[more]]
+##[[head]]
+
+?![[Podaj nazwê makra (bez parametrów) s³u¿¹cego do przes³ania pojedynczego znaku z modu³u j¹dra systemu Linux
+do pamiêci w przestrzeni u¿ytkownika.]]
+!![[put_user()]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do szeregowania procesów/w¹tków
+w systemie QNX.]]
+##[[W systemie QNX procesy mog¹ przyjmowaæ priorytety z przedzia³u [0, 255], przy czym priorytety
+w przedziale [64, 255] zarezerwowane s¹ dla procesów posiadaj¹cych uprawnienia administratora.]]
+##[[Ka¿dorazowe wyw³aszczenie procesu wymaga prze³¹czania kontekstu procesora rozumianego jako operacja
+zachowywania i odtwarzania stanu procesora (kontekstu), by wiele procesów mog³o dzieliæ zasoby
+pojedynczego procesora.]]
+##[[Wyw³aszczenie to technika u¿ywana w systemach wielozadaniowych, w której modu³ j¹dra odpowiedzialny
+za szeregowanie mo¿e wstrzymaæ aktualnie wykonywane zadanie (proces/w¹tek), aby umo¿liwiæ wykonanie innemu.
+Dziêki temu rozwi¹zaniu zawieszenie jednego procesu nie powoduje blokady ca³ego systemu operacyjnego.]]
+##[[Mikroj¹dro podejmuje decyzje dotycz¹ce szeregowania gdy: proces zostaje odblokowany, mija kwant czasu
+przeznaczony dla wykonywanego procesu, pojawia siê proces "gotowy" o priorytecie wy¿szym
+ni¿ dotychczas wykonywany.]]
+# [[W przypadku zastosowania algorytmu FIFO proces jest wykonywany a¿ do chwili gdy: sam zdecyduje siê
+oddaæ procesor (np.wywo³uj¹c funkcje we/wy) lub zostanie wyw³aszczony przez proces o wy¿szym priorytecie
+lub up³ynie przydzielony dla niego kwant czasu.]]
+
+?@[[Potokiem w rozumieniu unixowego systemu operacyjnego nazywamy]]
+@ [[przekierowanie wyjœcia programu do pliku]]
+@@[[przekierowanie wyjœcia jednego programu na wejœcie innego]]
+@ [[przekierowanie wejœcia do programu z pliku]]
+@ [[zalanie komputera strumieniem wody (w celu sch³odzenia)]]
+
+?![[Zapisz w jêzyku basha definicjê zmiennej o nazwie "POGODA", zawieraj¹cej jako zawartoœæ
+³añcuch znakowy "pochmurno".]]
+!![[POGODA=pochmurno]]
+!![[POGODA="pochmurno"]]
+
+?$[[Dopasuj podstawowe polecenia do manipulacji plikami i katalogami do ich funkcji.]]
+$C[[Usuwanie plików]]
+$E[[Tworzenie plików]]
+$B[[Tworzenie "twardych" dowi¹zañ]]
+$F[[Tworzenie katalogów]]
+$G[[Usuwanie katalogów]]
+$H[[Przenoszenie plików]]
+$$[[ls]]
+$$[[ln]]
+$$[[rm]]
+$$[[cd]]
+$$[[touch]]
+$$[[mkdir]]
+$$[[rmdir]]
+$$[[mv]]
+
+?@[[Wska¿ polecenie wyœwietlaj¹ce zawartoœæ zmiennej "NAZWA"]]
+@ [[echo NAZWA]]
+@ [[echo '$NAZWA']]
+@ [[$NAZWA]]
+@@[[echo "$NAZWA"]]
+
+?@[[Zadaniem klasy drugiego stopnia w trójstopniowej strukturze programów dla KDE jest:]]
+@ [[Przetwarzanie opcji podanych w linii poleceñ]]
+@ [[Realizacja g³ównej funkcji programu, np. edycji tekstu]]
+@ [[Wyœwietlenie pozycji menu "Help" wraz z zawartoœci¹]]
+@ [[Obs³uga zdarzeñ œrodowiska graficznego]]
+@@[[Obs³uga "peryferiów" okna: menu, paska stanu, paska narzêdziowego]]
+
+?@[[System Microsoft Windows 3.11 jest systemem ilu bitowym?]]
+@@[[16]]
+@ [[64]]
+@ [[32]]
+@ [[8]]
+
+?@[[Jak nazywa siê struktura definiuj¹ca funkcje modu³u sterownika urz¹dzeñ znakowych?]]
+@ [[file_functions]]
+@ [[inode]]
+@ [[FILE]]
+@ [[file]]
+@@[[file_operations]]
+
+?#[[Zaznacz te z poni¿szych twierdzeñ, które s¹ prawdziwe w stosunku do modu³ów j¹dra systemu Linux.]]
+##[[B³êdnie napisany modu³ mo¿e fizycznie uszkodziæ komputer]]
+# [[Najprostszy modu³ j¹dra to minimum 100 liniii kodu]]
+# [[Modu³y j¹dra pisze siê zwykle w bashu]]
+##[[Modu³y j¹dra pozwalaj¹ zwiêkszyæ jego funkcjonalnoœæ]]
+##[[Modu³y j¹dra mog¹ byæ ³adowane i usuwane z j¹dra w czasie pracy]]
+
+?$[[Dopasuj kolejnoœæ etapów, które wystêpuj¹ przy uruchomianiu systemu operacyjnego Linux]]
+$F[[Uruchomienie procesu /bin/init]]
+$B[[Uruchomienie bootloadera]]
+$D[[Autoprobing]]
+$E[[Poszukiwanie systemu plików na dysku wskazanym w konfiguracji bootloadera]]
+$A[[POST (power-on self-test)]]
+$C[[Za³adowanie j¹dra do pamiêci i uruchomienie go]]
+$$[[1]]
+$$[[2]]
+$$[[3]]
+$$[[4]]
+$$[[5]]
+$$[[6]]
+
+?@[[W jakim celu w kodzie modu³ów j¹dra u¿ywa siê semaforów i mutex-ów?]]
+@ [[Dla zabezpieczenia j¹dra przed hackerami]]
+@ [[W celu skomplikowania kodu modu³u j¹dra]]
+@ [[Nie u¿ywa siê takich tworów b¹dŸ s¹ to pojêcia nie istniej¹ce]]
+@@[[Dla zapobie¿enia "wyœcigowi o zasoby"]]
+
+?@[[Œcie¿kê bezwzglêdn¹ ("absolute path") poznajemy po tym, ¿e:]]
+@@[[rozpoczyna siê od ukoœnika ("/")]]
+@ [[rozpoczyna siê od $]]
+@ [[rozpoczyna siê od #]]
+@ [[rozpoczyna siê od ~]]
+@ [[rozpoczyna siê od g³ównego katalogu]]
+
+?@[[Wbudowane polecenie basha „[]", uzywane w instrukcji warunkowej, np.
+if [ -f/est/passwd]
+jest równowa¿ne zewnêtrznemu poleceniu:]]
+@ [[find]]
+@ [[grep]]
+@@[[test]]
+@ [[ls]]
+
+?![[Podaj nazwê funkcji (bez listy parametrów i wartoœci zwracanej) s³u¿¹cej do alokacji pamiêci dynamicznej
+w module j¹dra systemu Linux]]
+!![[kmalloc()]]
+
+?@[[Zmienna specjalna basha $1 oznacza:]]
+@ [[systemowy numer procesu skryptu lub funkcji]]
+@ [[liczbê parametrów skryptu lub funkcji]]
+@@[[pierwszy parametr skryptu lub funkcji]]
+@ [[kod zakoñczenia ostatniego polecenia lub potoku]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe.]]
+##[[Wymóg wysokiej reaktywnoœci stawiany systemom operacyjnym czasu rzeczywistego oznacza zagwarantowanie,
+¿e wymagane ograniczenia czasu odpowiedzi na zdarzenia zawsze bêd¹ spe³nione.]]
+##[[W przypadku systemów operacyjnych czasu rzeczywistego pojêcie "czas rzeczywisty" oznacza przewidywalnoœæ
+zachowania i szybkoœæ dzia³ania systemu.]]
+# [[Podstawowym wymaganiem dla systemu operacyjnego czasu rzeczywistego jest okreœlenie najgorszego
+(najd³u¿szego) czasu po jakim urz¹dzenie komputerowe pracuj¹ce pod jego kontrol¹ wypracuje odpowiedŸ
+po wyst¹pieniu zdarzenia.]]
+##[[Twarde systemy czasu rzeczywistego to takie systemy, dla których znany jest najgorszy (najd³u¿szy)
+czas odpowiedzi na zdarzenie, oraz wiadomo jest, ¿e nie zostanie on przekroczony.]]
+##[[Miêkkie systemy czasu rzeczywistego to takie systemy, które staraj¹ siê odpowiedzieæ najszybciej jak to
+mo¿liwe, ale nie wiadomo jest jaki mo¿e byæ najgorszy czas odpowiedzi na zdarzenie.]]
+
+?#[[Zaznacz te spoœród poni¿szych stwierdzeñ, które s¹ prawdziwe w stosunku do zmiennej warunkowej.]]
+# [[Zmienn¹ warunkow¹ stosujemy w przypadku, gdy zastosowanie mutexu jest niewystarczaj¹ce.]]
+# [[Blokowany przez zmienn¹ warunkow¹ w¹tek nie zwalnia blokady swojej sekcji krytycznej.]]
+##[[Zmienna warunkowa jest obiektem systemu operacyjnego umo¿liwiaj¹cym blokowanie w¹tku wewn¹trz sekcji
+krytycznej a¿ do momentu spe³nienia pewnego warunku.]]
+##[[Zmienna warunkowa jest zawsze u¿ywana ³¹cznie z mutexem.]]
+
+?![[Podaj nazwê funkcji implementowanej w systemie QNX, której wykonanie powoduje, ¿e proces przechodzi w stan
+Semaphore-blocked, gdy licznik zwi¹zany z tym semaforem przyjmuje wartoœæ zero. Wpisz sam¹ nazwê, bez
+wartoœci zwracanej i argumentów.]]
+!![[sem_wait()]]
+
+?![[Podaj nazwê funkcji implementowanej w systemie QNX, która umo¿liwia wys³anie impulsu. Wpisz sam¹ nazwê, bez
+wartoœci zwracanej i argumentów.]]
+!![[SendPulse()]]
+
+?![[Podaj nazwê polecenia konsoli (bez argumentów), które s³u¿y do usuwania plików.]]
+!![[rm]]
+
+?@[[W programie u¿ytkownika zapisano nastêpuj¹cy kod:
+int *wsk;
+wsk = 10;
+Ten kod:]]
+@@[[jest niebezpiecznym i nieprzenoœnym kodem]]
+@ [[jest kodem który przypisuje wartoœæ 10 zmiennej wskazywanej przez wskaŸnik]]
+@ [[jest kodem, który umo¿liwia ustawienie wskaŸnika na 10-tym elemencie tablicy]]
+@ [[jest kodem, który spowoduje b³¹d kompilacji]]
+
+?@[[Czy wskaŸnik typu void mo¿na skonwertowaæ do innego typu?]]
+@@[[Tak]]
+@ [[Nie]]
+
+?![[Podaj nazwê makra (bez argumentów), które wywo³uje siê w celu okreœlenia, ¿e pewna zmiana ma byæ traktowana
+jak parametr modu³u (czyli mo¿liwe jest jej ustalenie/zmiana w momencie ³adowania modu³u do j¹dra systemu linux)]]
+!![[module_param()]]
+
+?#[[Wybierz powody, dla których warto samodzielnie skompilowaæ j¹dro systemu Linux]]
+##[[dostarczone z dystybucj¹ j¹dro jest nadmiarowe, i przez to mo¿e byæ niebezpieczne]]
+# [[ka¿do j¹dro musi byæ skompilowane dok³adnie na tym komputerze, na którym bêdzie dzia³aæ]]
+# [[dystybucja systmu Linux nie zawiera j¹dra (z przyczyn patentowych)]]
+##[[dostarczone z dystybucj¹ j¹dro jest nieoptymalne]]
+
+?#[[Do typowych b³êdów podczas pracy z semaforami w modu³ach j¹dra systemu Linux zalicza siê:]]
+##[[zwolnienie semafora, którego siê uprzednio nie przechwyci³o]]
+##[[blokowanie zasobu semaforem przez d³ugi czas, bez istotnej potrzeby]]
+##[[przechwycenie semafora i zapomnienie o jego zwolnieniu]]
+##[[u¿ycie zasobu bez przechwycenia semafora]]
+
+?#[[Które z obiektów s³u¿¹ do synchronizacji zadañ?]]
+##[[zakoñczenia (completions)]]
+##[[mutexy (mutexes)]]
+##[[wiruj¹ce blokady (spinloks)]]
+##[[blokady sekwencyjne (seqlocks)]]
+
+?![[Podaj nazwê polecenia konsoli (bez argumentów), które s³u¿y do tworzenia katalogu.]]
+!![[mkdir]]
+
+?$[[Dopasuj b³êdy do ich znaczenia i priorytetu]]
+$B[[0 - niestabilny system]]
+$F[[1 - wymagane natychmiastowe podjêcie akcji]]
+$E[[2 - b³¹d krytyczny]]
+$C[[3 - b³¹d]]
+$D[[4 - ostrze¿enie]]
+$G[[5 - nieco wa¿niejsza uwaga]]
+$H[[6 - zwyk³a informacja]]
+$A[[informacja pociomu debuggingu]]
+$$[[KERN_DEBUG]]
+$$[[KERN_EMERG]]
+$$[[KERN_ERR]]
+$$[[KERN_WARNING]]
+$$[[KERN_CRIT]]
+$$[[KERN_ALERT]]
+$$[[KERN_NOTICE]]
+$$[[KERN_INFO]]
+
+?$[[Po³¹cz ze sob¹ skróty klawiszowe]]
+$A[[Przerwanie procesu]]
+$B[[Przerwanie strumienia]]
+$C[[Wstrzymanie przy odczycie]]
+$D[[Przerwanie wyœwietlania]]
+$E[[Wstrzymanie procesu]]
+$F[[Wznowienie wyœwietlania]]
+$$[[Ctrl-C]]
+$$[[Ctrl-D]]
+$$[[Ctrl-Y]]
+$$[[Ctrl-S]]
+$$[[Ctrl-Z]]
+$$[[Ctrl-Q]]
+
+?![[Podaj nazwê sygna³u implementowanego w systemie QNX, którego dostarczenie umo¿liwia wznowienie wykonywania
+procesu, którego wykonywanie zosta³o wstrzymane w wyniku dostarczenia sygna³u SIGSTOP.]]
+!![[SIGCONT]]
+
+?![[Podaj nazwê jednej z funkcji (bez argumentów i wartoœci zwracanej), które s³u¿¹ do wprowadzenia procesu
+w stan uœpienia w j¹drze systemu Linux.]]
+!![[wait_event()]]
+
+?![[Podaj nazwê funkcji implementowanej w systemie QNX do komunikacji za pomoc¹ mechanizmu przesy³ania
+wiadomoœci, której wykonanie nie powoduje zmiany stanu procesów komunikuj¹cych siê za pomoc¹ tego
+mechanizmu. Wpisz sam¹ nazwê, bez wartoœci zwracanej i argumentów.]]
+!![[Creceive()]]
+
+?![[Podaj nazwê funkcji implementowan¹ w systemie QNX, która s³u¿y do odbierania odpowiedzi na wys³an¹ wiadomoœæ.
+Wpisz sam¹ nazwê, bez wartoœci zwracanej i argumentów.]]
+!![[Receive()]]
+
+?#[[Operacje arytmetyczne które mo¿na wykonywaæ na wskaŸnikach:]]
+# [[Dodawanie]]
+##[[Dekrementacja]]
+# [[Mno¿enie]]
+# [[Odejmowanie]]
+##[[Inkrementacja]]
+##[[Porównywanie]]
+
+?#[[Spoœród podanych odpowiedzi wybierz te, które NIE s¹ prawdziwe w stosunku do stosu (ang. stack).]]
+##[[Stos to obszar zmiennych alokowanych dynamicznie]]
+##[[Przydzia³ stosu jest procesem d³ugotrwa³ym]]
+# [[Stos ma ograniczon¹, niewielk¹ pojemnoœæ]]
+# [[Stos to obszar dla zmiennych automatycznych]]
+# [[Struktura stosu umo¿liwia wy³¹cznie dodawanie/usuwanie zmiennych na jej wierzcho³ku]]
+
+?#[[Spoœród podanych odpowiedzi wybierz te, która NIE s¹ prawdziwe w odniesieniu do sterty (ang. heap).]]
+# [[Sterta to obszar zmiennych alokowanych dynamicznie]]
+# [[Przydzia³ obszaru sterty jest procesem d³ugotrwa³ym]]
+##[[Sterta ma ograniczon¹, bardzo niewielk¹ pojemnoœæ]]
+# [[Obszary sterty s¹ dostêpne wy³¹cznie za pomoc¹ wskaŸników]]
+##[[Struktura sterty umo¿liwia wy³¹cznie dodawanie/usuwanie zmiennych na jej wierzcho³ku]]
+
+?@[[Opcja GFP_KERNEL, podana jako drugi argument funkcji przydzielaj¹cej pamiêæ dynamiczn¹ w j¹drze systemu Linux,
+oznacza:]]
+@@[["Normalny" przydzia³ pamiêci j¹dra, który mo¿e uœpiæ kod modu³u]]
+@ [[funkcja przydzialaj¹ca pamiêæ dynamiczn¹ w j¹drze ma tylko jeden argument]]
+@ [[prawie "normalny" przydzia³ pamiêci j¹dra, lecz taki, który nigdy nie usypia modu³u czêœciowo]]
+@ [[przydzia³ pamiêci dla programu u¿ytkownika]]
+@ [[przydzia³ atomiczny, u¿ywany wy³¹cznie w procedurach obs³ugi przerwañ (nigdy nie usypia)]]
+
+?![[Zwalnianie pamiêci zarezerwowaej przez kmalloc():]]
+!![[kfree()]]
+
+?![[Polecenie konsolowe do tworzenia plików urz¹dzeñ znakowych:]]
+!![[mknod]]
+
+?![[Podaj nazwê struktury, która jest podstawowym elementem API list dwukierunkowych w j¹drze(). Wpisz nazwê
+bez nawiasów i s³owa kluczowego "struct"!]]
+!![[list_head]]
+
+?![[W którym katalogu znajduj¹ siê najwa¿niejsze programy tj. bash, cd, ls itp. bez których nie dzia³a³by system?]]
+!![[/bin]]
+
+?![[Jakim poleceniem wypisuje siê wiadomoœæ z modu³u j¹dra (odpowiedni log):]]
+!![[printk()]]
+
+?![[Jakie polecenie usuwa modu³ z j¹dra?]]
+!![[rmmod]]
+
+?![[Jaki ci¹g znaków oznacza katalog nadrzêdny]]
+!![[..]]
+
+?![[Jaki program dzia³aj¹cy w tle odpowiada za zapisywanie informacji o procesach]]
+!![[syslogd]]
+
+?@[[Jakiego typu zmienne mo¿na u¿ywaæ i definiowaæ w bashu:]]
+@ [[wy³¹cznie zmienne ³añcuchowe]]
+@ [[wy³¹cznie zmienne ca³kowitoliczbowe]]
+@@[[wy³¹cznie zmienne ³añcuchowe i ca³kowitoliczbowe]]
+@ [[dowolne zmienne]]
+
+?@[[Czy mo¿na przekonwertowaæ wskaŸnik dowolnego typu na wskaŸnik typu void?]]
+@@[[Tak]]
+@ [[Nie]]
+
+?@[[Czy wskaŸniki do obiektów mo¿na konwertowaæ na wskaŸniki do funkcji?]]
+@ [[Tak]]
+@@[[Nie]]
+
+?![[Najpopularniejszy kompilator na linuxie:]]
+!![[gcc]]
+
+?![[Kod Ÿród³owy:
+#include <iostream>
+int main() {
+std::cout << "Hello world!" << std::endl;
+return 0
+}
+zapisa³eœ w pliku "hello.cpp". Do skompilowania tego kodu u¿yjesz polecenia:]]
+!![[g++ hello.cpp]]
+
+?#[[Które z poni¿szych okreœleñ jest nazw¹ systemu operacyjnego:]]
+##[[Microsoft Windows]]
+##[[Novell Netware]]
+# [[VIX Automation]]
+# [[XPM Special]]
+
+?#[[Zaznacz typy systemu plików wystêpuj¹ce w systemie Windows:]]
+##[[FAT32]]
+##[[NTFS]]
+# [[FAT48]]
+# [[FAT64]]
+
+?$[[Dopasuj nazwy poleceñ do kontroli procesów do zadañ, które wykonuj¹]]
+$F[[Zakoñczenie "zabicie" procesu]]
+$A[[Przeniesienie procesu do t³a]]
+$D[[Przeniesienie procesu do pierwszego planu]]
+$C[[Lista procesów najbardziej obci¹¿aj¹cych system]]
+$B[[Przegl¹danie uruchomionych procesów]]
+$$[[bg]]
+$$[[ps]]
+$$[[top]]
+$$[[fg]]
+$$[[pstree]]
+$$[[kill]]
+
+?@[[Która z poni¿szych cech nie opisuje przetwarzania w chmurze (Cloud Computing)?]]
+@ [[Dostarcza miejsce do przechowywania danych]]
+@@[[Przechowuje dane w jednej lokalizacji]]
+@ [[Przechowuje dane w rozproszonych lokalizacjach]]
+@ [[Dostarcza aplikacje o przetwarzania danych do u¿ytkownika]]
+
+?#[[Zaznacz poprane stwierdzenia dotycz¹ce tzw. skroœnego rozwoju oprogramowania dla systemów wbudowanych:]]
+##[[Utworzona na komputerze macierzystym aplikacja jest zapisywana do pamiêci komputera docelowego
+zazwyczaj za pomoc¹ interfejsu JTAG lub RS232.]]
+##[[Na komputerze macierzystym zainstalowany jest system do tworzenia oprogramowania (ang. development system)
+obejmuj¹cy zazwyczaj edytor, kompilator, linker, biblioteki, debuggery, symulatory, itp.]]
+##[[Oprogramowanie dla systemów wbudowanych tworzone jest na tak zwanym komputerze macierzystym (and. host)
+a wykonywane na komputerze docelowym (ang. target).]]
+# [[Komputer macierzysty i docelowy musz¹ pracowaæ pod kontrol¹ tego samego systemu operacyjnego]]
+# [[Po przygotowaniu oprogramowania na komputerze macierzystym nastêpuje jego przes³anie za pomoc¹
+odpowiedniego interfejsu do pamiêci komputera docelowego, na którym przed finalnym uruchomieniem
+odbywa siê jego debuggowanie za pomoc¹ oprogramowania zainstalowanego na komputerze macierzystym]]
+
+?@[[Jaki jest najprostszy sposób debugowania modu³ów j¹dra?]]
+@ [[Poprzez wykorzystanie specjalnego debugera j¹dra "kdbg", który dzia³a w trybie graficznym]]
+@@[[Poprzez wypisywanie komunikatów poprzez loggera systemowego - za pomoc¹ printk()]]
+@ [[Poprzez wykorzystanie debuggera linii poleceñ "gdb"]]
+@ [[Poprzez wypisywanie komunikatów na konsoli za pomoc¹ printf()]]
+
+?![[Podaj nazwê jednego z filtrów konsolowych, które umo¿liwiaj¹ wyœwietlanie zawartoœci pliku]]
+!![[head]]
+!![[tail]]
+!![[cat]]
+
+?#[[Zaznaczyæ wykorzystywane w ró¿nych systemach operacyjnych typy j¹der.]]
+##[[Monolityczne]]
+##[[Hybrydowe]]
+##[[Mikroj¹dra, nanoj¹dra]]
+# [[Hiperj¹dra]]
+
+?@[[Która z cech NIE opisuje systemu Microsoft Windows Serwer 2008?]]
+@ [[Usprawione us³ugi katalogowe Active Directory]]
+@@[[Obs³uga systemu plików WS8FS]]
+@ [[Zaawansowane us³ugi terminalowe]]
+@ [[Serwer aplikacyjny (IIS 7.0)]]
+
+?![[filtr zliczaj¹cy iloœæ s³ów]]
+!![[wc]]
+
+?@[[Która z cech NIe opisuje systemu windows xp?]]
+@ [[Przywracanie poprzedniej konfiguracji bez utraty plików osobistych]]
+@@[[obs³uga systemu plików HPXPFS]]
+@ [[Obs³uga max. 4GB pamiêci RAM i 2 procesorów]]
+@ [[ochrona przed w³amaniami w internecie - wbudowany firewall]]
+
+?![[Podaj nazwê funkcji implementowan¹ w systemie QNX, której wykonanie
+powoduje, ¿e proces, w którym odbywa siê komunikacja za pomoc¹ mechanizmu przesy³ania wiadomoœci
+przechodzi ze stanu zablokowania SEND-blocked do stanu REPLY-blocked.
+Wpisz sam¹ nazwê, bez wartoœci zwracanej i argumentów]]
+!![[Receive()]]
+
+?@[[Czym cechuje siê ka¿dy plik urz¹dzenia znakowego systemu Linux?:]]
+@@[[numerem g³ównym i pobocznym ("major" i "minor")]]
+@ [[innym kolorem w listingu katalogu]]
+@ [[Lokalizacj¹ - zawsze w kartotece /dev]]
+@ [[niczym szczególnym]]
+
+?#[[Zaznaczyæ stany zadañ wystêpuj¹ce w systemach RTOS]]
+##[[Oczekuj¹ce (Waiting)]]
+##[[Gotowe (Ready)]]
+##[[Dzia³aj¹ce (Running)]]
+# [[Niegotowe (NotReady)]]
+
+?![[Podaj nazwê kanonicznego stanu procesu, w którym znajduje siê on w przypadku gdy ma przydzielone
+wszystkie zasoby potrzebne do poprawnego wykonania zawartego w nim kodu a oczekuje na przydzielenie
+mocy obliczeniowej procesora:]]
+!![[gotowy]]
+!![[Gotowy]]
+!![[ready]]
+!![[Ready]]
+
+?![[filtr wyswietlenie ca³ego pliku/strumienia]]
+!![[cat]]
+
+?@[[Jaki jest skutek przekazania argumentu przez wartoœæ?]]
+@ [[koniecznoœæ modyfikacji oryginalnego obiektu]]
+@@[[utworzenie lokalnej kopii argumentu]]
+@ [[brak mo¿liwoœci modyfikacji oryginalnego obiektu]]
+@ [[mo¿liwoœæ modyfikacji oryginalnego obiektu]]
+
+?![[filtr okreœlenie typu pliku]]
+!![[file]]
+
+?#[[Nale¿y zazanczyæ g³ówne biblioteki systemowe w systemie Microsoft Windows]]
+##[[User32.dll]]
+##[[Gdi32.dll]]
+##[[Kernel32.dll]]
+# [[Graph33.dll]]
+
+?![[Wpisz znak lub sekwencjê znaków, za pomoc¹ których realizuje siê potok (ang. pipe), czyli przekserowanie
+standardowego strumienia wyjœciowego jednego programu bezpoœrednio do strumienia wejœciowego innego programu.]]
+!![[|]]
+
+?@[[Czy indeks w tablicy mo¿e byæ ujemny? Np: tab[-5] ]]
+@ [[Nie]]
+@@[[Tak]]
+
+?@[[Do czego s³u¿y w j¹drze systemu Linux struktura inode?]]
+@ [[inode stanowi w j¹drze wewnêtrzn¹ reprezentacjê urz¹dzenia znakowego]]
+@ [[inode przechowuje informacje o obs³ugiwanych wywo³aniach systemowych]]
+@ [[inode pokazuje po³o¿enie plików w strukturze katalogów]]
+@ [[inode reprezentuje otwarty plik modu³u]]
+@@[[inode jednoznacznie reprezentuje w j¹drze plik dyskowy]]
+
+?![[Wpisz komendê s³u¿¹c¹ za wypisanie drzewa procesów]]
+!![[pstree]]
+
+?![[Podaj nazwê polecenia konsoli (bez argumentów), które s³u¿y do tworzenia dowi¹zañ do plików i katalogów]]
+!![[ln]]
+
+?![[Podaj nazwê funkcji (bez wartoœci zwracanej i argumentów), która s³u¿y do zwolnienia mutexa
+(podniesienia semafora) w j¹drze systemu Linux.]]
+!![[mutex_unlock()]]
+
+?![[Filtr umo¿liwiaj¹cy sortowanie]]
+!![[sort]]
+
+?![[Filtr umo¿liwiaj¹cy wyœwietlanie tzw. "ekran po ekranie"]]
+!![[more]]
+
+?![[Podaj komendê wyœwietlaj¹c¹ iloœæ wolnego miejsca]]
+!![[df]]
+
+?![[Jak nazywa siê program konsolowy, który s³u¿y do poszukiwania plików o okreœlonej
+nazwie, czasie utworzenia, wielkoœci, typie, itp.]]
+!![[find]]
+
+?![[Podaj nazwê funkcji zwracaj¹cej stan pamiêci wirtualnej]]
+!![[vmstat]]
+
+?![[Podaj nazwê polecenia odpowiadaj¹cego za ustawianie praw domyœlnych]]
+!![[umask]]
+
+?![[Podaj nazwê filtra umo¿liwiaj¹cego wypisanie ³añcucha znaków]]
+!![[strings]]
+
+?![[Podaj nazwê makra (bez argumentów), które definiuje funkcjê wykonywan¹ w momencie wgrywania modu³u
+do j¹dra systemu Linux]]
+!![[module_init()]]
